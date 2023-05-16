@@ -7,6 +7,8 @@
 <svelte:head>
 	<title>booploops</title>
 	<meta name="description" content="booploops website" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+	<meta name="theme-color" content="#000000" />
 </svelte:head>
 
 <div class="placeholder-main">
@@ -28,7 +30,7 @@
 <style lang="scss" scoped>
 	#player_container {
 		position: fixed;
-		inset:0;
+		inset: 0;
 		z-index: -2;
 		// filter: blur(64px);
 		// opacity: 0.2;
@@ -37,34 +39,46 @@
 	.text-container {
 		position: relative;
 		pointer-events: none;
+		animation: textFadeIn 2s ease-in-out;
+
+		@keyframes textFadeIn {
+			0% {
+				transform: translateY(-10vh);
+				opacity:0;
+			}
+			100% {
+				transform: translateY(0px);
+				opacity:1;
+			}
+		}
 	}
 	.text-main {
 	}
 	.text-radient {
 		position: absolute;
 		inset: 0;
-		filter: blur(3rem) brightness(0.5) saturate(2.5);
+		filter: blur(3rem) brightness(1) saturate(2.5);
 		z-index: -1;
 		animation: lightPulse 5s infinite ease-in-out;
 		transform: scale(1);
 
 		@keyframes lightPulse {
 			0% {
-				opacity: 1;
-				transform: scale(1);
+				opacity: .8;
+				transform: scale(1) skew(10deg);
 			}
 			50% {
-				opacity: 0.7;
-				transform: scale(1.02);
+				opacity: 0.9;
+				transform: scale(1.02) skew(-10deg);
 			}
 			100% {
-				opacity: 1;
-				transform: scale(1);
+				opacity: .8;
+				transform: scale(1) skew(10deg);
 			}
 		}
 	}
 	.placeholder-main {
-		background-color: #030303;
+		background-color: #000;
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
