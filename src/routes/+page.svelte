@@ -2,6 +2,7 @@
 	import BooploopsText from '$lib/BooploopsText.svelte';
 	import Jukebox from '$lib/Jukebox.svelte';
 	import Player from '$lib/Player.svelte';
+	import ScanlineOverlay from '$lib/ScanlineOverlay.svelte';
 </script>
 
 <svelte:head>
@@ -25,6 +26,7 @@
 	<div id="player_container">
 		<Player videoId="DAfh2F4HzFU"/>
 	</div> -->
+	<ScanlineOverlay></ScanlineOverlay>
 </div>
 
 <style lang="scss" scoped>
